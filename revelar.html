@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Um segredo para você</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="revelar">
+  <header class="brand"><a href="index.html"></a><span>amigo secreto</span></header>
+  <main class="reveal-layout">
+    <section id="convite" class="card invitation" hidden>
+      <span class="eyebrow">(só entre nós)</span>
+      <h1 id="saudacao"></h1><h2 id="grupo"></h2>
+      <dl class="details"><dt>Quando</dt><dd id="encontro"></dd><dt>Onde</dt><dd id="endereco"></dd><dt>Presente até</dt><dd id="limite"></dd></dl>
+      <div id="envelope" class="envelope" aria-hidden="true"><div class="envelope-letter">✦<br>Um segredo só seu</div><div class="envelope-front"></div><div class="envelope-flap"></div><span class="envelope-seal">✦</span></div>
+      <div id="capa"><button id="revelar" class="primary full" type="button">Abrir meu envelope</button></div>
+      <div id="segredo" class="secret" hidden aria-live="polite"><p>Você tirou</p><div id="avatar-sorteado" class="revealed-avatar"></div><h2 id="sorteado" tabindex="-1"></h2><div class="gift-tips"><h3>Sobre mim</h3><p id="dicas"></p></div><small>Salve este link. Guarde o segredo.</small></div>
+    </section>
+    <section id="erro" class="card invitation" hidden><h1>Convite incompleto.</h1><p>Peça ao organizador um novo link.</p></section>
+    <footer></footer>
+  </main><noscript>Ative o JavaScript para abrir seu convite.</noscript>
+</body>
+</html>

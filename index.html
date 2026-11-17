@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Amigo Secreto</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="organizar">
+  <header class="brand"><a href="index.html"></a><span>amigo secreto</span></header>
+  <main>
+    <section class="intro"><div><span class="eyebrow">(um encontro, uma surpresa)</span><h1>Amigo<br>secreto.</h1><a class="button primary" href="#evento">Criar sorteio ↗</a></div><div class="hero-envelope" aria-hidden="true"><span>♡</span></div></section>
+    <form id="config">
+      <fieldset id="fields">
+        <section class="card"><h2><span class="step">01</span> Evento</h2>
+          <div class="grid">
+            <label class="wide">Nome do grupo<input id="evento" required maxlength="100" placeholder="Natal da nossa turma"></label>
+            <label>Data e hora<input id="data" type="datetime-local" required></label>
+            <label>Até quanto? (R$)<input id="valor" type="number" min="0" max="1000000" step="0.01" required placeholder="50,00" inputmode="decimal"></label>
+            <label class="wide">Local ou link<input id="local" required maxlength="500" placeholder="Casa da Maria ou link da chamada"></label>
+          </div>
+        </section>
+        <section class="card"><h2><span class="step">02</span> Participantes</h2>
+          <label for="nome">Nome</label><div class="add-row"><input id="nome" maxlength="80" placeholder="Ex.: Maria" autocomplete="off"><button id="adicionar" type="button">Adicionar</button></div>
+          <details class="profile-editor"><summary>Avatar, sobre mim e envelope <span>＋</span></summary><div class="profile-content">
+            <fieldset><legend>Avatar</legend><div id="avatares" class="avatar-picker"></div></fieldset>
+            <label for="sobre">Sobre mim</label><textarea id="sobre" maxlength="400" rows="3" placeholder="Gostos, tamanho de roupa, ideias de presente…"></textarea>
+            
+            <fieldset><legend>Envelope</legend><div id="cores" class="color-picker"></div></fieldset>
+            <div id="mini-envelope" class="mini-envelope" aria-hidden="true">✉</div>
+          </div></details>
+          <div id="participantes" class="participants"></div><p id="vazio" class="empty">Ninguém por aqui. Ainda.</p>
+        </section>
+        <section class="draw-panel"><div><span class="eyebrow">(tudo pronto?)</span><h2>Deixe a sorte<br> decidir.</h2></div><div><button class="primary full" type="submit">Realizar sorteio ↗</button><details class="help"><summary>Como funcionam as restrições?</summary><p>Ninguém tira a si mesmo. Em cada perfil, marque quem a pessoa não pode tirar. Para bloquear um par nos dois sentidos, marque nos dois perfis.</p></details></div></section>
+      </fieldset>
+    </form>
+    <p id="status" role="status" aria-live="polite"></p>
+    <section id="resultado" class="card" hidden tabindex="-1"><span class="eyebrow">(convites)</span><h2>Segredos prontos.</h2><p>Um link para cada pessoa.</p><div id="links"></div><div class="actions"><button id="copiar-backup" type="button">Copiar todos</button><button id="baixar-backup" type="button">Baixar backup</button></div><p class="hint">Baixe o backup antes de sair. Não salvamos os resultados.</p><button id="novo" class="text-button" type="button">Refazer sorteio</button><p class="hint">Links antigos continuam válidos se você refizer.</p></section>
+    <footer><span></span><details><summary>Sobre os links</summary><p>Quem tem o link pode abrir o resultado. Base64 não é criptografia. Guarde seu backup em particular.</p></details></footer>
+  </main>
+  <noscript>Ative o JavaScript para realizar o sorteio.</noscript>
+</body>
+</html>

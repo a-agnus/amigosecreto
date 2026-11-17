@@ -1,0 +1,76 @@
+ENTRE NÓS — AMIGO SECRETO
+HTML, CSS e JavaScript puro. Sem dependências, banco de dados ou backend.
+
+ARQUIVOS
+index.html — configuração, participantes, restrições e envio.
+revelar.html — convite individual com revelação por clique.
+style.css — estilo responsivo, acessibilidade e animação.
+script.js — sorteio, Base64 UTF-8, validação, WhatsApp e backup.
+
+PUBLICAR GRATUITAMENTE NO GITHUB PAGES
+1. Entre no GitHub e crie um repositório público, por exemplo amigo-secreto.
+2. Em Add file > Upload files, envie os quatro arquivos diretamente na raiz.
+   Não envie só o ZIP nem uma pasta contendo os arquivos. Faça o commit.
+3. Abra Settings > Pages.
+4. Em Build and deployment > Source, selecione Deploy from a branch.
+5. Escolha main e /(root); clique em Save.
+6. Aguarde a publicação. A URL aparecerá em Settings > Pages, normalmente:
+   https://SEU-USUARIO.github.io/amigo-secreto/
+7. Abra essa URL pública, cadastre o evento e faça o sorteio.
+8. Baixe o backup e envie cada convite para a pessoa correspondente.
+
+Referência oficial:
+https://docs.github.com/pt/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+
+USO
+- Adicione entre 2 e 100 pessoas com nomes distintos.
+- Abra Restrições em cada pessoa e marque quem ela não pode tirar.
+- Restrições são direcionais; para um casal não se tirar, marque nos dois.
+- A data/hora é informativa, no horário local do evento; não bloqueia o convite.
+- O botão WhatsApp abre uma mensagem pronta. Você escolhe o contato e envia.
+- O backup TXT contém nomes dos participantes e seus links, sem destinatários
+  escritos em texto claro. Guarde-o em particular.
+- Não há persistência automática. Fechar/recarregar perde a lista do organizador.
+  Os links já copiados ou baixados continuam funcionando independentemente dela.
+- Sorteios novos não revogam links antigos. Se refizer, avise todos.
+- Para testar localmente, abra index.html. Para compartilhar, sorteie no site
+  publicado; links file:// ou localhost não funcionam nos aparelhos dos convidados.
+
+COMO FUNCIONA
+Cada convite carrega JSON em Base64 UTF-8 no parâmetro d de revelar.html.
+URLSearchParams protege os caracteres especiais do Base64.
+A saudação mostra os detalhes; o nome sorteado só entra na página após o clique.
+O algoritmo embaralha as opções e usa emparelhamento bipartido com caminhos
+ aumentantes para remanejar impasses e detectar impossibilidade matemática.
+Cada pessoa dá e recebe exatamente um presente, sem tirar a si mesma.
+Não se promete probabilidade uniforme entre todas as combinações possíveis.
+
+PRIVACIDADE
+Base64 não é criptografia: é possível decodificar ou alterar o conteúdo do link.
+A tela anti-curiosos evita exposição acidental, não oferece autenticação.
+Qualquer pessoa que tenha o link consegue abrir o resultado. O organizador
+tecnicamente pode decodificar os links. Não publique o backup no repositório.
+Sem backend não há como revogar convites, autenticar participantes ou garantir
+sigilo contra quem tem acesso ao link. Não há rastreadores ou scripts externos.
+
+VERIFICAÇÃO
+Sintaxe JavaScript validada; 4.164 configurações de restrições de 2 a 4 pessoas
+comparadas com solução exaustiva; UTF-8 e rejeição de links malformados testados.
+Teste visual automatizado não concluído por bloqueio do navegador no ambiente.
+
+PERSONALIZAÇÃO (VERSÃO 2)
+Escolha um dos oito avatares ilustrados com emojis, escreva até 400 caracteres
+sobre gostos e dicas de presente e escolha uma das seis cores de envelope.
+Configure esses dados antes de Adicionar ou em Editar avatar, dicas e envelope.
+O organizador preenche os perfis com as informações fornecidas pelos participantes.
+O envelope tem a cor escolhida para quem abre o convite. Dentro dele aparecem
+o avatar e as dicas da pessoa sorteada, somente após a animação de abertura.
+Links antigos da versão 1 continuam abrindo, com avatar padrão e sem dicas.
+Atualizar perfil exige novo sorteio/novos links; links enviados são imutáveis.
+Os emojis variam um pouco de aparência entre Android, iPhone e computador.
+A animação respeita a preferência do aparelho por movimento reduzido.
+
+VISUAL MINIMALISTA
+Interface em preto e branco, bordas finas e textos reduzidos.
+Abra Avatar, sobre mim e envelope antes de adicionar para personalizar.
+Perfis e restrições continuam editáveis na lista de participantes.
